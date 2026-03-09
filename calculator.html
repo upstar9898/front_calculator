@@ -106,12 +106,23 @@
             currentInput += num; //현재 입력값 뒤에 숫자를 이어붙이기
 
             $("#display").val(currentInput); // 화면에 현재 입력값을 출력
-
+            console.log(firstNumber, operator, secondNumber);
         });
 
         $('.operator').click(function () {
             // class="operator"인 태그를 클릭하면 수행 (연산자를 클릭했을 때 수행)
+
+            // 첫번째 숫자 저장(연산자를 클릭했다? => 첫번째 숫자 입력이 끝났다)
+            firstNumber = currentInput;
+            // 클릭한 연산자 저장
+            operator = $(this).data("op");
+            // 두번째 숫자를 입력받기 위해 currentInput 초기화 (비워주지 않으면 계속 누적됨)
+            currentInput = "";
+            // 출력 화면도 지움
+            $("#display").val("");
+            console.log(firstNumber, operator, secondNumber);
         });
+
     </script>
 
 </body>
