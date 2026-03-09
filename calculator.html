@@ -55,7 +55,7 @@
             </div>
             <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number" data-num="9">9</button>
             </div>
-            <div class="col-3"><button type="button" class="btn btn-warning btn-calc operator">/</button>
+            <div class="col-3"><button type="button" class="btn btn-warning btn-calc operator" data-op="/">/</button>
             </div>
         </div>
         <div class="row">
@@ -65,7 +65,7 @@
             </div>
             <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number" data-num="6">6</button>
             </div>
-            <div class="col-3"><button type="button" class="btn btn-warning btn-calc operator">*</button>
+            <div class="col-3"><button type="button" class="btn btn-warning btn-calc operator" data-op="*">*</button>
             </div>
         </div>
         <div class="row">
@@ -75,7 +75,7 @@
             </div>
             <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number" data-num="3">3</button>
             </div>
-            <div class="col-3"><button type="button" class="btn btn-warning btn-calc operator">-</button>
+            <div class="col-3"><button type="button" class="btn btn-warning btn-calc operator" data-op="-">-</button>
             </div>
         </div>
         <div class="row">
@@ -85,7 +85,7 @@
             </div>
             <div class="col-3"><button type="button" class="btn btn-secondary btn-calc">=</button>
             </div>
-            <div class="col-3"><button type="button" class="btn btn-warning btn-calc operator">+</button>
+            <div class="col-3"><button type="button" class="btn btn-warning btn-calc operator" data-op="+">+</button>
             </div>
         </div>
     </div>
@@ -107,6 +107,10 @@
 
             $("#display").val(currentInput); // 화면에 현재 입력값을 출력
 
+        });
+
+        $('.operator').click(function () {
+            // class="operator"인 태그를 클릭하면 수행 (연산자를 클릭했을 때 수행)
         });
     </script>
 
