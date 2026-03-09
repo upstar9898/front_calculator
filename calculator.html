@@ -99,8 +99,14 @@
 
 
         $('.number').click(function () {
-            // class="number"인 태그를 선택하면 
-            console.log($(this))
+            // class="number"인 태그를 클릭하면 data 속성의 num값을 가져와 출력
+            console.log($(this).data("num"));
+
+            let num = $(this).data("num");
+            currentInput += num; //현재 입력값 뒤에 숫자를 이어붙이기
+
+            $("#display").val(currentInput); // 화면에 현재 입력값을 출력
+
         });
     </script>
 
