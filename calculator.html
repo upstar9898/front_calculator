@@ -49,41 +49,41 @@
         <input type="text" class="form-control" id="display" readonly />
 
         <div class="row">
-            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number">7</button>
+            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number" data-num="7">7</button>
             </div>
-            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number">8</button>
+            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number" data-num="8">8</button>
             </div>
-            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number">9</button>
+            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number" data-num="9">9</button>
             </div>
             <div class="col-3"><button type="button" class="btn btn-warning btn-calc operator">/</button>
             </div>
         </div>
         <div class="row">
-            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number">4</button>
+            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number" data-num="4">4</button>
             </div>
-            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number">5</button>
+            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number" data-num="5">5</button>
             </div>
-            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number">6</button>
+            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number" data-num="6">6</button>
             </div>
             <div class="col-3"><button type="button" class="btn btn-warning btn-calc operator">*</button>
             </div>
         </div>
         <div class="row">
-            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number">1</button>
+            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number" data-num="1">1</button>
             </div>
-            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number">2</button>
+            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number" data-num="2">2</button>
             </div>
-            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number">3</button>
+            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number" data-num="3">3</button>
             </div>
             <div class="col-3"><button type="button" class="btn btn-warning btn-calc operator">-</button>
             </div>
         </div>
         <div class="row">
-            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number">0</button>
+            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number" data-num="0">0</button>
             </div>
-            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number">C</button>
+            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc">C</button>
             </div>
-            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number">=</button>
+            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc">=</button>
             </div>
             <div class="col-3"><button type="button" class="btn btn-warning btn-calc operator">+</button>
             </div>
@@ -97,6 +97,11 @@
         let operator = ""; // 연산자를 저장할 변수
         let currentInput = ""; //현재 입력중인 값을 저장할 변수
 
+
+        $('.number').click(function () {
+            // class="number"인 태그를 선택하면 
+            console.log($(this))
+        });
     </script>
 
 </body>
