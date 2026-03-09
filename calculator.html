@@ -11,9 +11,90 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f0fa;
+        }
+
+        .calculator {
+            width: 320px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-calc {
+            width: 100%;
+            font-size: 1.2rem;
+            /* 1em = 16px(웹의 기본 글자크기), 1.2배 */
+            margin-bottom: 10px;
+            height: 60px;
+        }
+
+        #display {
+            height: 60px;
+            font-size: 1.5rem;
+            text-align: right;
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="calculator">
+        <h3 class="text-center mb-4">계산기</h3>
+        <!-- 입력, 계산 결과를 보여주는 창 -->
+        <input type="text" class="form-control" id="display" readonly />
+
+        <div class="row">
+            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number">7</button>
+            </div>
+            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number">8</button>
+            </div>
+            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number">9</button>
+            </div>
+            <div class="col-3"><button type="button" class="btn btn-warning btn-calc operator">/</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number">4</button>
+            </div>
+            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number">5</button>
+            </div>
+            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number">6</button>
+            </div>
+            <div class="col-3"><button type="button" class="btn btn-warning btn-calc operator">*</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number">1</button>
+            </div>
+            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number">2</button>
+            </div>
+            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number">3</button>
+            </div>
+            <div class="col-3"><button type="button" class="btn btn-warning btn-calc operator">-</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number">0</button>
+            </div>
+            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number">C</button>
+            </div>
+            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number">=</button>
+            </div>
+            <div class="col-3"><button type="button" class="btn btn-warning btn-calc operator">+</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 전역변수 : 
+
+
+    </script>
 
 </body>
 
