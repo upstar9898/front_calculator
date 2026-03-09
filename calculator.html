@@ -88,7 +88,7 @@
             </div>
             <div class="col-3"><button type="button" class="btn btn-secondary btn-calc">C</button>
             </div>
-            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc">=</button>
+            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc" id="equal">=</button>
             </div>
             <div class="col-3"><button type="button" class="btn btn-warning btn-calc operator" data-op="+">+</button>
             </div>
@@ -119,7 +119,7 @@
             // class="operator"인 태그를 클릭하면 수행 (연산자를 클릭했을 때 수행)
             if (currentInput == "") {
                 // 현재 입력값이 비어있다면 연산자를 누를 수 없게
-                showAlert();
+                showAlert("숫자를 입력하세요!");
                 return;  // 현재 함수를 빠져나감
             }
 
@@ -133,8 +133,47 @@
             $("#display").val("");
             console.log(firstNumber, operator, secondNumber);
         });
-        function showAlert() {
-            let output = `<div class="alert alert-danger"><strong>Fail!</strong>연산자를 먼저 입력하지 마세요!</div>`;
+
+        $('#equal').click(function () {
+            // equal 버튼을 클릭하면
+            if (currentInput == "") {
+                showAlert("두번째 숫자를 입력하세요!");
+                return;
+            };
+
+            secondNumber = currentInput;
+
+            console.log(firstNumber, operator, secondNumber);
+
+            //계산하기 위해 입력된 값을 실수로 변환
+            let num1 = parseFloat(firstNumber);
+            let num2 = parseFloat(secondNumber);
+
+            let result = 0;
+
+            // 연산자에 따라 연산 수행
+            if (operator == '+') {
+                result = num1 + num2;
+            } else if (operator == '-') {
+                result = num1 - num2;
+            } else if (operator == '*') {
+                result = num1 * num2;
+            } else if (operator == '/') {
+                result = num1 / num2;
+            }
+
+            // 계산 결과를 화면에 출력
+            $('#display').val(result);
+
+            // 다음 계산을 위해 결과값을 currentInput에 저장
+            currentInput = result.toString();
+            firstNumber = "";
+            secondNumber = "";
+            operator = "";
+        });
+
+        function showAlert(msg) {
+            let output = `<div class="alert alert-danger"><strong>Fail!</strong>${msg}</div>`;
             $(".alertArea").html(output);
             $(".alertArea").show(1000);
         }
