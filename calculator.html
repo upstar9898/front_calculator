@@ -45,6 +45,11 @@
 <body>
     <div class="calculator">
         <h3 class="text-center mb-4">계산기</h3>
+
+        <div class="alertArea" style="display:none">
+
+        </div>
+
         <!-- 입력, 계산 결과를 보여주는 창 -->
         <input type="text" class="form-control" id="display" readonly />
 
@@ -99,6 +104,7 @@
 
 
         $('.number').click(function () {
+            $(".alertArea").hide();
             // class="number"인 태그를 클릭하면 data 속성의 num값을 가져와 출력
             console.log($(this).data("num"));
 
@@ -111,6 +117,11 @@
 
         $('.operator').click(function () {
             // class="operator"인 태그를 클릭하면 수행 (연산자를 클릭했을 때 수행)
+            if (currentInput == "") {
+                // 현재 입력값이 비어있다면 연산자를 누를 수 없게
+                showAlert();
+                return;  // 현재 함수를 빠져나감
+            }
 
             // 첫번째 숫자 저장(연산자를 클릭했다? => 첫번째 숫자 입력이 끝났다)
             firstNumber = currentInput;
@@ -122,7 +133,11 @@
             $("#display").val("");
             console.log(firstNumber, operator, secondNumber);
         });
-
+        function showAlert() {
+            let output = `<div class="alert alert-danger"><strong>Fail!</strong>연산자를 먼저 입력하지 마세요!</div>`;
+            $(".alertArea").html(output);
+            $(".alertArea").show(1000);
+        }
     </script>
 
 </body>
