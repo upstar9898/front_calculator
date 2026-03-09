@@ -86,7 +86,7 @@
         <div class="row">
             <div class="col-3"><button type="button" class="btn btn-secondary btn-calc number" data-num="0">0</button>
             </div>
-            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc">C</button>
+            <div class="col-3"><button type="button" class="btn btn-secondary btn-calc" id="clear">C</button>
             </div>
             <div class="col-3"><button type="button" class="btn btn-secondary btn-calc" id="equal">=</button>
             </div>
@@ -101,6 +101,14 @@
         let secondNumber = ""; // 두번째 입력된 값
         let operator = ""; // 연산자를 저장할 변수
         let currentInput = ""; //현재 입력중인 값을 저장할 변수
+
+        $('#clear').click(function () {
+            $('#display').val("");
+            firstNumber = "";
+            secondNumber = "";
+            operator = "";
+            currentInput = "";
+        });
 
 
         $('.number').click(function () {
